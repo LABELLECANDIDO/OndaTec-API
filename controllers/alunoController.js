@@ -1,0 +1,2 @@
+// get - passar o email e a senha pela requisição e retornar status 200 e uma mensagem de sucesso
+// post - passar o email e a senha pela requisição e retornar uma mensagem de sucesso(criar conta nova)
