@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express(); 
-const port = 3001;
+const mongoose = require('./database');
+require('dotenv').config();
+
+const port = process.env.PORT || 3001;
 
 app.use(express.json());
 const alunosRoute = require("./routes/aluno");
-const professoresRoute = require("./routes/professor");
+ const professoresRoute = require("./routes/professor");
 
 //rotas 
 app.use('/alunos', alunosRoute);
@@ -15,3 +18,6 @@ app.use('/professores', professoresRoute);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })
+mongoose.connection.on('error', (err) => {
+    console.error('Erro na conexão com o MongoDB:', err);
+});
