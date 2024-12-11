@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('./database');
 require('dotenv').config();
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 app.use(express.json());
 const alunosRoute = require("./routes/aluno");
